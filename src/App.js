@@ -4,11 +4,11 @@ import Sidebar from './Components/Sidebar';
 import Chat from './Components/Chat';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './Login';
-
+import {useStateValue} from "./StateProvider";
 
 function App() {
 
-  const [user, setuser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="app">
       {!user ? (
